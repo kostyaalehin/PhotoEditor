@@ -8,6 +8,7 @@
 import UIKit
 
 class ImageCell: UICollectionViewCell {
+    static let cellId = String(describing: ImageCell.self)
 
     @IBOutlet weak var photoImageView: UIImageView!
     override func awakeFromNib() {
