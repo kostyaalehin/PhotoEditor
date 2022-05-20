@@ -15,7 +15,7 @@ class ImageCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    
+
     func setupOutputImage (image: UIImage) {
         self.photoImageView.image = image
     }

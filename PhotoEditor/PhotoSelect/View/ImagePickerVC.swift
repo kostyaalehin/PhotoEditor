@@ -13,7 +13,7 @@ class ImagePickerVC: UIViewController {
     private lazy var adapter: PhotoImageAdapter = {
         PhotoImageAdapter()
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         imageList.register(UINib(nibName: ImageCell.cellId, bundle: nil), forCellWithReuseIdentifier: ImageCell.cellId)
@@ -22,7 +22,6 @@ class ImagePickerVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
 
     /*
     // MARK: - Navigation
