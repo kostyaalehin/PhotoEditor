@@ -10,8 +10,15 @@ import UIKit
 class ImagePickerVC: UIViewController {
 
     @IBOutlet weak var imageList: UICollectionView!
+    private lazy var adapter: PhotoImageAdapter = {
+        PhotoImageAdapter()
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageList.register(UINib(nibName: ImageCell.cellId, bundle: nil), forCellWithReuseIdentifier: ImageCell.cellId)
+        self.imageList.dataSource = adapter
+        self.imageList.delegate = adapter
 
         // Do any additional setup after loading the view.
     }
