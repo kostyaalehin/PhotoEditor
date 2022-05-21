@@ -10,6 +10,7 @@
 		1401CAD82837A1A400DBC13A /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1401CAD62837A1A400DBC13A /* ImageCell.swift */; };
 		1401CAD92837A1A400DBC13A /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1401CAD72837A1A400DBC13A /* ImageCell.xib */; };
 		1401CADC2837A35300DBC13A /* PhotoImageAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1401CADB2837A35300DBC13A /* PhotoImageAdapter.swift */; };
+		1401CADF2837A9FF00DBC13A /* PhotoImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1401CADE2837A9FF00DBC13A /* PhotoImageHelper.swift */; };
 		14599C4E28365CAB002F8144 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14599C4D28365CAB002F8144 /* AppDelegate.swift */; };
 		14599C5028365CAB002F8144 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14599C4F28365CAB002F8144 /* SceneDelegate.swift */; };
 		14599C5228365CAB002F8144 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14599C5128365CAB002F8144 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 		1401CAD62837A1A400DBC13A /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		1401CAD72837A1A400DBC13A /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		1401CADB2837A35300DBC13A /* PhotoImageAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImageAdapter.swift; sourceTree = "<group>"; };
+		1401CADE2837A9FF00DBC13A /* PhotoImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImageHelper.swift; sourceTree = "<group>"; };
 		14599C4A28365CAB002F8144 /* PhotoEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14599C4D28365CAB002F8144 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14599C4F28365CAB002F8144 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,14 @@
 			path = Adapter;
 			sourceTree = "<group>";
 		};
+		1401CADD2837A9DC00DBC13A /* service */ = {
+			isa = PBXGroup;
+			children = (
+				1401CADE2837A9FF00DBC13A /* PhotoImageHelper.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
 		14599C4128365CAB002F8144 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 		14599C6128366AD7002F8144 /* PhotoSelect */ = {
 			isa = PBXGroup;
 			children = (
+				1401CADD2837A9DC00DBC13A /* service */,
 				14599C6228366AF3002F8144 /* View */,
 			);
 			path = PhotoSelect;
@@ -121,6 +132,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14599C5E28365CAE002F8144 /* Build configuration list for PBXNativeTarget "PhotoEditor" */;
 			buildPhases = (
+				1447EAA32837B51B00C8CD28 /* SwiftLint */,
 				14599C4628365CAB002F8144 /* Sources */,
 				14599C4728365CAB002F8144 /* Frameworks */,
 				14599C4828365CAB002F8144 /* Resources */,
@@ -182,6 +194,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1447EAA32837B51B00C8CD28 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		14599C4628365CAB002F8144 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -193,6 +226,7 @@
 				14599C5028365CAB002F8144 /* SceneDelegate.swift in Sources */,
 				1401CADC2837A35300DBC13A /* PhotoImageAdapter.swift in Sources */,
 				1401CAD82837A1A400DBC13A /* ImageCell.swift in Sources */,
+				1401CADF2837A9FF00DBC13A /* PhotoImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
