@@ -16,8 +16,10 @@ class PhotoImageAdapter: NSObject,
 
     let side: CGFloat = 80.0
 
+    weak var PhotoHolder: PhotoHolderProtocol?
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return PhotoHolder?.assets?.count ?? 0
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
