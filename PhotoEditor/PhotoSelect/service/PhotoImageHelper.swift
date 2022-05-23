@@ -32,7 +32,7 @@ class PhotoImageHelper: NSObject, PhotoHolderProtocol {
 
     func loadAsserts(success: @escaping(PHFetchResult<AnyObject>) -> Void, failure: @escaping() -> Void) {
         if PHPhotoLibrary.authorizationStatus() == .authorized {
-
+            self.loadAsserts(success: success)
         } else {
             PHPhotoLibrary.requestAuthorization { status in
                 if status == .authorized {
