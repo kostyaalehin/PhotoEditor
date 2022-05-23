@@ -16,10 +16,20 @@ class ImagePickerVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let side = (UIScreen.main.bounds.size.width - 40) / 3
+        self.adapter.side = side
         imageList.register(UINib(nibName: ImageCell.cellId, bundle: nil), forCellWithReuseIdentifier: ImageCell.cellId)
         self.imageList.dataSource = adapter
         self.imageList.delegate = adapter
+        self.adapter.photoHolder = PhotoImageHelper.shared
+        PhotoImageHelper.shared.loadAsserts { [weak self] _ in
+            guard let self = self else {return}
+            DispatchQueue.main.async {
+                self.imageList.reloadData()
+            }
+        } failure: {
 
+        }
         // Do any additional setup after loading the view.
     }
 
