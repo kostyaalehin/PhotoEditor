@@ -45,3 +45,9 @@ class ImagePickerVC: UIViewController {
     */
 
 }
+
+extension ImagePickerVC: ListOwner {
+    func selectImages(index: Int) {
+        PhotoImageHelper.shared.selectAsset(index: index)
+    }
+}
