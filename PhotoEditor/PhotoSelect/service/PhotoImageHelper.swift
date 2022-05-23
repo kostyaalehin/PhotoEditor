@@ -44,6 +44,10 @@ class PhotoImageHelper: NSObject, PhotoHolderProtocol {
         }
     }
 
+    func selectAsset(index: Int) {
+        self.currentAssert = assets?[index]
+    }
+
     func loadAsserts(success: @escaping(PHFetchResult<AnyObject>) -> Void) {
         let fetchOptions = PHFetchOptions()
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
