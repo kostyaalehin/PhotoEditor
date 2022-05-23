@@ -18,6 +18,7 @@ class ImagePickerVC: UIViewController {
         super.viewDidLoad()
         let side = (UIScreen.main.bounds.size.width - 40) / 3
         self.adapter.side = side
+        self.adapter.listOwner = self
         imageList.register(UINib(nibName: ImageCell.cellId, bundle: nil), forCellWithReuseIdentifier: ImageCell.cellId)
         self.imageList.dataSource = adapter
         self.imageList.delegate = adapter

@@ -16,6 +16,7 @@ class PhotoImageAdapter: NSObject,
 
     var side: CGFloat = 120.0
 
+    weak var listOwner: ListOwner?
     weak var photoHolder: PhotoHolderProtocol?
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -59,6 +60,10 @@ class PhotoImageAdapter: NSObject,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10.0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.listOwner?.selectImages(index: indexPath.row)
     }
 
 }
