@@ -14,12 +14,12 @@ class PhotoImageAdapter: NSObject,
                          UICollectionViewDelegateFlowLayout {
     private var images: [UIImage] = [UIImage]()
 
-    let side: CGFloat = 80.0
+    var side: CGFloat = 120.0
 
-    weak var PhotoHolder: PhotoHolderProtocol?
+    weak var photoHolder: PhotoHolderProtocol?
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return PhotoHolder?.assets?.count ?? 0
+        return photoHolder?.assets?.count ?? 0
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -34,7 +34,12 @@ class PhotoImageAdapter: NSObject,
                 for: indexPath) as? ImageCell else {
             return UICollectionViewCell()
         }
-        cell.setupOutputImage(image: images[indexPath.row])
+        photoHolder?.loadImageForAsset(index: indexPath.row,
+                                       size: CGSize(width: side, height: side),
+                                       success: { image in
+            cell.setupOutputImage(image: image)
+        })
+
         return cell
     }
 
