@@ -20,7 +20,7 @@
 		14599C6428366B2F002F8144 /* ImagePickerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14599C6328366B2F002F8144 /* ImagePickerVC.xib */; };
 		14599C6628366C71002F8144 /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14599C6528366C71002F8144 /* ImagePickerVC.swift */; };
 		149D1882283BFBA6002B6917 /* ListOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D1881283BFBA6002B6917 /* ListOwner.swift */; };
-		149D1885283D5DF4002B6917 /* ImageSetingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D1883283D5DF4002B6917 /* ImageSetingsVC.swift */; };
+		149D1885283D5DF4002B6917 /* ImageSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D1883283D5DF4002B6917 /* ImageSettingsVC.swift */; };
 		149D1886283D5DF4002B6917 /* ImageSetingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149D1884283D5DF4002B6917 /* ImageSetingsVC.xib */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +40,7 @@
 		14599C6328366B2F002F8144 /* ImagePickerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePickerVC.xib; sourceTree = "<group>"; };
 		14599C6528366C71002F8144 /* ImagePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		149D1881283BFBA6002B6917 /* ListOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOwner.swift; sourceTree = "<group>"; };
-		149D1883283D5DF4002B6917 /* ImageSetingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageSetingsVC.swift; path = View/ImageSetingsVC.swift; sourceTree = "<group>"; };
+		149D1883283D5DF4002B6917 /* ImageSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageSettingsVC.swift; path = View/ImageSettingsVC.swift; sourceTree = "<group>"; };
 		149D1884283D5DF4002B6917 /* ImageSetingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ImageSetingsVC.xib; path = View/ImageSetingsVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +117,7 @@
 			children = (
 				1401CADD2837A9DC00DBC13A /* service */,
 				14599C6228366AF3002F8144 /* View */,
-				149D1883283D5DF4002B6917 /* ImageSetingsVC.swift */,
+				149D1883283D5DF4002B6917 /* ImageSettingsVC.swift */,
 				149D1884283D5DF4002B6917 /* ImageSetingsVC.xib */,
 			);
 			path = PhotoSelect;
@@ -237,7 +237,7 @@
 				14599C5028365CAB002F8144 /* SceneDelegate.swift in Sources */,
 				1401CADC2837A35300DBC13A /* PhotoImageAdapter.swift in Sources */,
 				1401CAD82837A1A400DBC13A /* ImageCell.swift in Sources */,
-				149D1885283D5DF4002B6917 /* ImageSetingsVC.swift in Sources */,
+				149D1885283D5DF4002B6917 /* ImageSettingsVC.swift in Sources */,
 				1401CADF2837A9FF00DBC13A /* PhotoImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
