@@ -8,7 +8,5 @@
 import Foundation
 
 protocol ListOwner: AnyObject {
-    func selectImages (index: Int) {
-
-    }
+    func selectImages (index: Int)
 }

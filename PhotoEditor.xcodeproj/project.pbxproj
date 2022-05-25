@@ -22,6 +22,9 @@
 		149D1882283BFBA6002B6917 /* ListOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D1881283BFBA6002B6917 /* ListOwner.swift */; };
 		149D1885283D5DF4002B6917 /* ImageSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D1883283D5DF4002B6917 /* ImageSettingsVC.swift */; };
 		149D1886283D5DF4002B6917 /* ImageSetingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 149D1884283D5DF4002B6917 /* ImageSetingsVC.xib */; };
+		149D1888283E6B60002B6917 /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D1887283E6B60002B6917 /* FilterManager.swift */; };
+		149D188A283E6EE3002B6917 /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D1889283E6EE3002B6917 /* ImageItem.swift */; };
+		149D188C283E7BCC002B6917 /* FilterImageAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149D188B283E7BCC002B6917 /* FilterImageAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		149D1881283BFBA6002B6917 /* ListOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOwner.swift; sourceTree = "<group>"; };
 		149D1883283D5DF4002B6917 /* ImageSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageSettingsVC.swift; path = View/ImageSettingsVC.swift; sourceTree = "<group>"; };
 		149D1884283D5DF4002B6917 /* ImageSetingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ImageSetingsVC.xib; path = View/ImageSetingsVC.xib; sourceTree = "<group>"; };
+		149D1887283E6B60002B6917 /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
+		149D1889283E6EE3002B6917 /* ImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
+		149D188B283E7BCC002B6917 /* FilterImageAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterImageAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				1401CADB2837A35300DBC13A /* PhotoImageAdapter.swift */,
+				149D188B283E7BCC002B6917 /* FilterImageAdapter.swift */,
 			);
 			path = Adapter;
 			sourceTree = "<group>";
@@ -77,6 +84,8 @@
 			children = (
 				1401CADE2837A9FF00DBC13A /* PhotoImageHelper.swift */,
 				149D1881283BFBA6002B6917 /* ListOwner.swift */,
+				149D1887283E6B60002B6917 /* FilterManager.swift */,
+				149D1889283E6EE3002B6917 /* ImageItem.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -235,8 +244,11 @@
 				14599C5228365CAB002F8144 /* ViewController.swift in Sources */,
 				14599C4E28365CAB002F8144 /* AppDelegate.swift in Sources */,
 				14599C5028365CAB002F8144 /* SceneDelegate.swift in Sources */,
+				149D1888283E6B60002B6917 /* FilterManager.swift in Sources */,
+				149D188A283E6EE3002B6917 /* ImageItem.swift in Sources */,
 				1401CADC2837A35300DBC13A /* PhotoImageAdapter.swift in Sources */,
 				1401CAD82837A1A400DBC13A /* ImageCell.swift in Sources */,
+				149D188C283E7BCC002B6917 /* FilterImageAdapter.swift in Sources */,
 				149D1885283D5DF4002B6917 /* ImageSettingsVC.swift in Sources */,
 				1401CADF2837A9FF00DBC13A /* PhotoImageHelper.swift in Sources */,
 			);

@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageSettingsVC" customModule="PhotoEditor" customModuleProvider="target">
             <connections>
+                <outlet property="defaltImageView" destination="CUC-Qm-yLC" id="DDE-mN-4s2"/>
+                <outlet property="filteredImageList" destination="guk-Lh-bk2" id="vZm-mk-D5C"/>
+                <outlet property="intencitySlide" destination="cTQ-0B-E4I" id="CXG-L9-ke1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -47,9 +50,15 @@
                             </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="archivebox.circle" catalog="system"/>
+                            <connections>
+                                <action selector="onCancel:" destination="-1" eventType="touchUpInside" id="jtj-7b-ZLq"/>
+                            </connections>
                         </button>
                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cTQ-0B-E4I">
                             <rect key="frame" x="38" y="0.0" width="318" height="31"/>
+                            <connections>
+                                <action selector="onSliderChanger:" destination="-1" eventType="valueChanged" id="wuA-zT-jyZ"/>
+                            </connections>
                         </slider>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b90-bk-Bqp">
                             <rect key="frame" x="364" y="0.0" width="30" height="30"/>
@@ -58,6 +67,9 @@
                             </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="checkmark" catalog="system"/>
+                            <connections>
+                                <action selector="onConfirm:" destination="-1" eventType="touchUpInside" id="dbH-D7-uby"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>

@@ -45,7 +45,7 @@ class PhotoImageHelper: NSObject, PhotoHolderProtocol {
     }
 
     func selectAsset(index: Int) {
-        self.currentAssert = assets?[index]
+        self.currentAssert = assets?[index] as? PHAsset
     }
 
     func loadAsserts(success: @escaping(PHFetchResult<AnyObject>) -> Void) {
