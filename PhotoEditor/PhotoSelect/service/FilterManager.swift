@@ -57,14 +57,18 @@ class FilterManager: NSObject {
         return images
     }
 
-    func setSelectedFilter(index: Int, image: UIImage) async -> UIImage? {
+    func setSelectedFilter(index: Int, image: UIImage, intencity: Int = 0) async -> UIImage? {
         self.selectedImage = image
+        guard let defaltImage = defaltImage else {
+            return nil
+        }
+
         self.selectFilter = CIFilter(name: filterList[index])
         guard let filter = self.selectFilter else {return nil}
-        let ciImage = CIImage(image: image)
+        let ciImage = CIImage(image: defaltImage)
         filter.setValue(ciImage, forKey: kCIInputImageKey)
 
-        return try? await applyProcessing(filter: filter, image: image)
+        return try? await applyProcessing(filter: filter, image: image, intencity)
     }
 
     func setFilterToDefault(index: Int) async -> UIImage? {

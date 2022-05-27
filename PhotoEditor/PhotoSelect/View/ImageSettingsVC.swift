@@ -28,6 +28,7 @@ class ImageSettingsVC: UIViewController {
 
             self.loadImages()
         }
+
         filteredImageList.register(UINib(nibName: ImageCell.cellId, bundle: nil),
                                    forCellWithReuseIdentifier: ImageCell.cellId)
         self.filteredImageList.dataSource = adapter
@@ -49,26 +50,41 @@ class ImageSettingsVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func onSliderChanger(_ sender: Any) {
-        let intencity = ((sender as? UISlider)?.value ?? 15.0)
-    }
-    @IBAction func onConfirm(_ sender: Any) {
+        let intencity = ((sender as? UISlider)?.value ?? 15.0) * 100.0
+        self.loadItem(index: Int(intencity))
     }
 
+    @IBAction func onConfirm(_ sender: Any) {
+            if let image = self.defaltImageView.image {
+                PhotoImageHelper.shared.saveImage(image: image) {
+                    DispatchQueue.main.async {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                } failure: {
+
+                }
+            }
+    }
 }
 
 extension ImageSettingsVC: ListOwner {
     func selectImages(index: Int) {
-        loadItem(index: index)
+        self.currentIndex = index
+        let intencity = self.intencitySlide.value * 100
+        loadItem(index: self.currentIndex, intencity: Int(intencity))
     }
     @MainActor
-    func loadItem(index: Int) {
+    func loadItem(index: Int, intencity: Int = 0) {
         let image = self.adapter.images[index].image
         self.defaltImageView.image = image
 
         Task {
-            if let image = await FilterManager.shared.setSelectedFilter(index: index, image: image) {
-                self.adapter.changeItem(index: index, item: ImageItem(image: image, order: index))
-                self.filteredImageList.reloadData()
+            if let image = await FilterManager.shared.setSelectedFilter(index: index,
+                                                                        image: image,
+                                                                        intencity: intencity) {
+                self.defaltImageView.image = image
+//                self.adapter.changeItem(index: index, item: ImageItem(image: image, order: index))
+//                self.filteredImageList.reloadData()
             }
         }
     }
